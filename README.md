@@ -1,54 +1,51 @@
-Library Management System API
-Bu proje, kütüphane yönetim sistemi için bir REST API sağlar. CRUD işlemleri yapabilen çeşitli endpointler sunar.
+# Library Management System
 
-Endpointler
-Author Endpoints
-HTTP Method	URL	Açıklama
-POST	/v1/authors	Yeni bir yazar ekler
-GET	/v1/authors/{id}	Belirtilen id ile yazarı getirir
-PUT	/v1/authors	Mevcut bir yazarı günceller
-DELETE	/v1/authors/{id}	Belirtilen id ile yazarı siler
-Book Endpoints
-HTTP Method	URL	Açıklama
-POST	/v1/books	Yeni bir kitap ekler
-GET	/v1/books/{id}	Belirtilen id ile kitabı getirir
-PUT	/v1/books	Mevcut bir kitabı günceller
-DELETE	/v1/books/{id}	Belirtilen id ile kitabı siler
-Category Endpoints
-HTTP Method	URL	Açıklama
-POST	/v1/categories	Yeni bir kategori ekler
-GET	/v1/categories/{id}	Belirtilen id ile kategoriyi getirir
-PUT	/v1/categories	Mevcut bir kategoriyi günceller
-DELETE	/v1/categories/{id}	Belirtilen id ile kategoriyi siler (Kitap varsa silinmez)
-Publisher Endpoints
-HTTP Method	URL	Açıklama
-POST	/v1/publishers	Yeni bir yayınevi ekler
-GET	/v1/publishers/{id}	Belirtilen id ile yayınevini getirir
-PUT	/v1/publishers	Mevcut bir yayınevini günceller
-DELETE	/v1/publishers/{id}	Belirtilen id ile yayınevini siler
-Book Borrowing Endpoints
-HTTP Method	URL	Açıklama
-POST	/v1/bookborrowings	Yeni bir kitap ödünç alma kaydı ekler
-GET	/v1/bookborrowings/{id}	Belirtilen id ile ödünç alma kaydını getirir
-PUT	/v1/bookborrowings	Mevcut bir ödünç alma kaydını günceller
-DELETE	/v1/bookborrowings/{id}	Belirtilen id ile ödünç alma kaydını siler
-Kurulum ve Çalıştırma
-Bu projeyi klonlayın:
+Welcome to the Library Management System project. This system aims to facilitate the management of books, authors, categories, publishers, and borrowing records within a library setting.
 
-git clone https://github.com/your-username/LibraryManagementSystem.git
-Proje dizinine gidin:
+## Getting Started
 
-cd LibraryManagementSystem
-Gerekli bağımlılıkları yükleyin ve projeyi çalıştırın:
+To get started with the API, you can access the Swagger documentation after the project runs (http://localhost:8081/swagger-ui/index.html#/). This documentation provides detailed information about the available endpoints and how to interact with them.
 
-mvn clean install
-mvn spring-boot:run
-4.Sql'deki database 'imin backup'ını alıp repoya ekledim.Ekledim .sql formatındaki dosyayı sql'de restore edip database'imi kendi localinize kopyalıyabilirsiniz.
+## Technologies Used
 
-API'yi Postman veya başka bir araçla kullanabilirsiniz.Postmande hazır kullandığım end pointleri export edip repoya ekledim o dosyayı postmana import ederek end pointleri ve hazır JSON formatındaki put ve post kodlarına erişebilirsiniz.
-Bağımlılıklar
-Spring Boot
-Spring Data JPA
-Lombok
-ModelMapper
-PostgreSQL # Week12-LibraryManagementSystem  # Week12-LibraryManagementSystem  
+- Java
+- Spring Boot
+- Hibernate
+- PostgreSQL
+- Maven
+
+## Features
+
+- **Book Management:** CRUD operations for books, including retrieval by categories and publishers.
+- **Author Management:** CRUD operations for authors.
+- **Category Management:** CRUD operations for book categories.
+- **Publisher Management:** CRUD operations for publishers.
+- **Borrowing Management:** Tracking of book borrowing records.
+
+## Setup Instructions
+
+1. Clone the repository.
+2. Configure your PostgreSQL database in `application.properties`.
+3. Build the project using Maven: `mvn clean install`.
+4. Run the application: `java -jar target/library-management-1.0.jar`.
+
+## API Endpoints
+
+- **GET /api/books:** Retrieve all books.
+- **POST /api/books:** Create a new book.
+- **GET /api/authors:** Retrieve all authors.
+- **POST /api/authors:** Create a new author.
+- **GET /api/categories:** Retrieve all categories.
+- **POST /api/categories:** Create a new category.
+- **GET /api/publishers:** Retrieve all publishers.
+- **POST /api/publishers:** Create a new publisher.
+- **GET /api/borrowings:** Retrieve all borrowing records.
+- **POST /api/borrowings:** Create a new borrowing record.
+
+## Contribution
+
+Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
